@@ -1,0 +1,18 @@
+<!-- File Explorer app HTML -->
+<div class="app-interface" id="file-explorer" style="top:82px; left:466px;">
+    <div class="app-header">
+        <span>File Explorer</span>
+        <button onclick="closeApp('file-explorer')">✕</button>
+    </div>
+    <div class="app-body">
+        <div class="file-item" onclick="openFile('Documents')">📁 Documents</div>
+        <div class="file-item" onclick="openFile('Music')">📁 Music</div>
+        <div class="file-item" onclick="openFile('Pictures')">📁 Pictures</div>
+        <div class="file-item" onclick="openFile('readme.txt')">📄 readme.txt</div>
+        <div class="file-item" onclick="openFile('notes.txt')">📄 notes.txt</div>
+        <div class="app-footer">
+            <button onclick="alert('This is a simulated explorer.');">Refresh</button>
+            <button onclick="alert('No files can be changed in this demo.');">Properties</button>
+        </div>
+    </div>
+</div>

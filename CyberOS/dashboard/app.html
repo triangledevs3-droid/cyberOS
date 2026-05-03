@@ -1,0 +1,47 @@
+<!-- Dashboard app HTML -->
+<div class="app-interface" id="dashboard" style="top:120px; left:466px; max-width: 520px;">
+    <div class="app-header">
+        <span>📊 Dashboard</span>
+        <button onclick="closeApp('dashboard')">✕</button>
+    </div>
+    <div class="app-body dashboard-body">
+        <div class="dashboard-card">
+            <div class="dashboard-label">Open apps</div>
+            <div id="dashboard-app-count">0</div>
+        </div>
+        <div class="dashboard-card">
+            <div class="dashboard-label">OS style</div>
+            <div id="dashboard-os-mode">Windows 11</div>
+        </div>
+        <div class="dashboard-card">
+            <div class="dashboard-label">Theme</div>
+            <div id="dashboard-theme">Dark</div>
+        </div>
+        <div class="dashboard-card">
+            <div class="dashboard-label">Current time</div>
+            <div id="dashboard-time">00:00:00</div>
+        </div>
+        <div class="dashboard-card">
+            <div class="dashboard-label">Desktop background</div>
+            <div id="dashboard-bg-mode">Default</div>
+        </div>
+        <div class="dashboard-actions">
+            <div class="dashboard-action-group">
+                <div class="dashboard-subtitle">Switch OS</div>
+                <button onclick="setOSMode('windows11')">Windows 11</button>
+                <button onclick="setOSMode('macos')">MacOS</button>
+                <button onclick="setOSMode('linux')">Linux</button>
+            </div>
+            <div class="dashboard-action-group">
+                <div class="dashboard-subtitle">Change background</div>
+                <div class="dashboard-bg-buttons">
+                    <button onclick="setOSBackground('default')">Default</button>
+                    <button onclick="setOSBackground('blue')">Blue</button>
+                    <button onclick="setOSBackground('sunset')">Sunset</button>
+                    <button onclick="setOSBackground('space')">Space</button>
+                </div>
+            </div>
+            <button onclick="toggleTheme()">Toggle Light/Dark</button>
+        </div>
+    </div>
+</div>

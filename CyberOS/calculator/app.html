@@ -1,0 +1,15 @@
+<!-- Calculator app HTML -->
+<div class="app-interface" id="calculator" style="top:120px; left:78px;">
+    <div class="app-header">
+        <span>🧮 Calculator</span>
+        <button onclick="closeApp('calculator')">✕</button>
+    </div>
+    <div class="app-body">
+        <input id="calc-expression" type="text" placeholder="Enter expression e.g. 5*12-4" autocomplete="off" />
+        <div class="app-footer">
+            <button onclick="calculateExpression()">Calculate</button>
+            <button onclick="clearCalculator()">Clear</button>
+        </div>
+        <div id="calc-result">Result will appear here.</div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<!-- Settings App HTML -->
+<div class="app-interface" id="settings" style="top:120px; left:78px; max-width: 600px;">
+    <div class="app-header">
+        <span>⚙️ Settings</span>
+        <button onclick="closeApp('settings')">✕</button>
+    </div>
+    <div class="app-body settings-body">
+        <div class="settings-tabs">
+            <button class="tab-btn active" onclick="switchTab('display')">Display</button>
+            <button class="tab-btn" onclick="switchTab('system')">System</button>
+            <button class="tab-btn" onclick="switchTab('about')">About</button>
+        </div>
+        
+        <div id="display-tab" class="settings-tab active">
+            <div class="settings-group">
+                <label>Brightness</label>
+                <div class="brightness-control">
+                    <span>🔅</span>
+                    <input type="range" id="brightness" min="50" max="150" value="100" onchange="setBrightness(this.value)" />
+                    <span>🔆</span>
+                </div>
+                <div class="brightness-value" id="brightness-label">100%</div>
+            </div>
+            
+            <div class="settings-group">
+                <label>Theme</label>
+                <div class="theme-buttons">
+                    <button class="theme-btn active" onclick="setThemeMode('auto')">Auto</button>
+                    <button class="theme-btn" onclick="setThemeMode('light')">Light</button>
+                    <button class="theme-btn" onclick="setThemeMode('dark')">Dark</button>
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <label>Wallpaper</label>
+                <div class="wallpaper-grid">
+                    <div class="wallpaper-btn" onclick="setWallpaper('default')">Default</div>
+                    <div class="wallpaper-btn" onclick="setWallpaper('blue')">Blue</div>
+                    <div class="wallpaper-btn" onclick="setWallpaper('sunset')">Sunset</div>
+                    <div class="wallpaper-btn" onclick="setWallpaper('space')">Space</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="system-tab" class="settings-tab">
+            <div class="settings-group">
+                <label>Operating System</label>
+                <div class="os-buttons">
+                    <button class="os-btn active" onclick="setOSMode('windows11')">Windows 11</button>
+                    <button class="os-btn" onclick="setOSMode('macos')">MacOS</button>
+                    <button class="os-btn" onclick="setOSMode('linux')">Linux</button>
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <label>Animation Speed</label>
+                <div class="speed-control">
+                    <button onclick="setAnimationSpeed('slow')" class="speed-btn">Slow</button>
+                    <button onclick="setAnimationSpeed('normal')" class="speed-btn active">Normal</button>
+                    <button onclick="setAnimationSpeed('fast')" class="speed-btn">Fast</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="about-tab" class="settings-tab">
+            <div class="about-info">
+                <h3>Windows 11 Demo</h3>
+                <p><strong>Version:</strong> 1.0.0</p>
+                <p><strong>Build:</strong> 2026.05.02</strong></p>
+                <p><strong>Device Name:</strong> Win11-Demo</p>
+                <p style="margin-top: 20px; opacity: 0.7;">This is a interactive demonstration of a Windows 11 desktop environment.</p>
+            </div>
+        </div>
+    </div>
+</div>

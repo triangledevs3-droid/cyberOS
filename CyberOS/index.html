@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Windows 11 Demo</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="boot-screen">
+        <div class="sun"></div>
+        <p id="boot-text">STARTING Windows 11...</p>
+    </div>
+
+    <div id="desktop">
+        <div id="icons-row">
+            <div class="icon" onclick="openApp('terminal')">
+                <div class="emoji">⌨️</div>
+                <span>Terminal</span>
+            </div>
+            <div class="icon" onclick="openApp('file-explorer')">
+                <div class="emoji">🗂️</div>
+                <span>File Explorer</span>
+            </div>
+            <div class="icon" onclick="openApp('journal')">
+                <div class="emoji">📝</div>
+                <span>Journal</span>
+            </div>
+            <div class="icon" onclick="openApp('clock')">
+                <div class="emoji">⏰</div>
+                <span>Clock</span>
+            </div>
+            <div class="icon" onclick="openApp('dashboard')">
+                <div class="emoji">📊</div>
+                <span>Dashboard</span>
+            </div>
+            <div class="icon" onclick="openApp('calculator')">
+                <div class="emoji">🧮</div>
+                <span>Calculator</span>
+            </div>
+            <div class="icon" onclick="openApp('browser')">
+                <div class="emoji">🌐</div>
+                <span>Browser</span>
+            </div>
+            <div class="icon" onclick="openApp('weather')">
+                <div class="emoji">🌦️</div>
+                <span>Weather</span>
+            </div>
+            <div class="icon" onclick="openApp('palette')">
+                <div class="emoji">🎨</div>
+                <span>Palette</span>
+            </div>
+            <div class="icon" onclick="openApp('music')">
+                <div class="emoji">🎵</div>
+                <span>Music</span>
+            </div>
+            <div class="icon" onclick="openApp('paint')">
+                <div class="emoji">🖌️</div>
+                <span>Paint</span>
+            </div>
+            <div class="icon" onclick="openApp('camera')">
+                <div class="emoji">📷</div>
+                <span>Camera</span>
+            </div>
+            <div class="icon" onclick="openApp('search-engine')">
+                <div class="emoji">🔍</div>
+                <span>Search</span>
+            </div>
+            <div class="icon" onclick="openApp('eco-tips')">
+                <div class="emoji">🌱</div>
+                <span>Eco Tips</span>
+            </div>
+        </div>
+
+        <div class="app-interface" id="terminal" style="top:72px; left:78px;">
+            <div class="app-header">
+                <span>Terminal</span>
+                <button onclick="closeApp('terminal')">✕</button>
+            </div>
+            <div class="app-body">
+                <div id="terminal-output">C:\Users\Win11&gt; _</div>
+                <div class="terminal-input-row">
+                    <span>C:\&gt;</span>
+                    <input id="terminal-input" type="text" placeholder="Type a command and press Enter" autocomplete="off" />
+                    <button onclick="runCommand()">Run</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="file-explorer" style="top:82px; left:466px;">
+            <div class="app-header">
+                <span>File Explorer</span>
+                <button onclick="closeApp('file-explorer')">✕</button>
+            </div>
+            <div class="app-body">
+                <div class="file-item" onclick="openFile('Documents')">📁 Documents</div>
+                <div class="file-item" onclick="openFile('Music')">📁 Music</div>
+                <div class="file-item" onclick="openFile('Pictures')">📁 Pictures</div>
+                <div class="file-item" onclick="openFile('readme.txt')">📄 readme.txt</div>
+                <div class="file-item" onclick="openFile('notes.txt')">📄 notes.txt</div>
+                <div class="app-footer">
+                    <button onclick="alert('This is a simulated explorer.');">Refresh</button>
+                    <button onclick="alert('No files can be changed in this demo.');">Properties</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="journal" style="top:300px; left:78px;">
+            <div class="app-header">
+                <span>Journal</span>
+                <button onclick="closeApp('journal')">✕</button>
+            </div>
+            <div class="app-body">
+                <textarea id="notepad-text" placeholder="Write your thoughts here..."></textarea>
+                <div class="app-footer" style="display:flex; gap:12px; margin-top:14px;">
+                    <button onclick="saveNote()">Save Note</button>
+                    <button onclick="loadNote()">Load Note</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="clock" style="top:300px; left:466px;">
+            <div class="app-header">
+                <span>⏰ Clock</span>
+                <button onclick="closeApp('clock')">✕</button>
+            </div>
+            <div class="app-body clock-body">
+                <div id="clock-time">00:00:00</div>
+                <div id="clock-date">Loading date…</div>
+                <div id="clock-theme">Waiting for time...</div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="eco-tips" style="top:120px; left:480px;">
+            <div class="app-header">
+                <span>🌿 Eco Tips</span>
+                <button onclick="closeApp('eco-tips')">✕</button>
+            </div>
+            <div class="app-body">
+                <div id="eco-tip-text">Nature is the best teacher. Click "Next Tip" to explore sustainable ideas.</div>
+                <div class="app-footer" style="display:flex; gap:12px; margin-top:14px;">
+                    <button onclick="showEcoTip()">Next Tip</button>
+                    <button onclick="copyEcoTip()">Copy Tip</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="calculator" style="top:120px; left:78px;">
+            <div class="app-header">
+                <span>🧮 Calculator</span>
+                <button onclick="closeApp('calculator')">✕</button>
+            </div>
+            <div class="app-body">
+                <input id="calc-expression" type="text" placeholder="Enter expression e.g. 5*12-4" autocomplete="off" />
+                <div class="app-footer">
+                    <button onclick="calculateExpression()">Calculate</button>
+                    <button onclick="clearCalculator()">Clear</button>
+                </div>
+                <div id="calc-result">Result will appear here.</div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="browser" style="top:140px; left:78px; max-width: 840px; width: 88vw; min-width: 480px;">
+            <div class="app-header">
+                <span>🌐 Browser</span>
+                <button onclick="closeApp('browser')">✕</button>
+            </div>
+            <div class="app-body browser-body">
+                <div class="browser-toolbar">
+                    <input id="browser-url" type="text" placeholder="Enter website or search term" autocomplete="off" />
+                    <button onclick="navigateBrowser()">Go</button>
+                </div>
+                <div class="browser-window">
+                    <iframe id="browser-frame" srcdoc="<html><body style='margin:0;padding:32px;font-family:Segoe UI, sans-serif;background:#071029;color:#edf5ff;'><h1>Welcome to Win11 Browser</h1><p>Type a website or any search term above and press Go.</p><p>For a quick demo, try: <strong>example.com</strong> or <strong>windows 11</strong>.</p></body></html>" title="Browser window"></iframe>
+                </div>
+                <div class="app-footer browser-footer">
+                    <button onclick="navigateBrowserHome()">Home</button>
+                    <button onclick="refreshBrowser()">Refresh</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="weather" style="top:90px; left:78px;">
+            <div class="app-header">
+                <span>🌦️ Weather Studio</span>
+                <button onclick="closeApp('weather')">✕</button>
+            </div>
+            <div class="app-body weather-body">
+                <div class="weather-value" id="weather-text">Sunny skies and gentle breeze. Refresh to see a new forecast.</div>
+                <div class="app-footer">
+                    <button onclick="updateWeather()">Refresh Forecast</button>
+                    <button onclick="copyWeather()">Copy Forecast</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="palette" style="top:330px; left:78px;">
+            <div class="app-header">
+                <span>🎨 Color Palette</span>
+                <button onclick="closeApp('palette')">✕</button>
+            </div>
+            <div class="app-body palette-body">
+                <div id="palette-hex">#F3A4FF, #69D6FF, #6CFF94</div>
+                <div class="palette-row" id="palette-swatches"></div>
+                <div class="app-footer">
+                    <button onclick="refreshPalette()">New Palette</button>
+                    <button onclick="copyPalette()">Copy Colors</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="dashboard" style="top:120px; left:466px; max-width: 520px;">
+            <div class="app-header">
+                <span>📊 Dashboard</span>
+                <button onclick="closeApp('dashboard')">✕</button>
+            </div>
+            <div class="app-body dashboard-body">
+                <div class="dashboard-card">
+                    <div class="dashboard-label">Open apps</div>
+                    <div id="dashboard-app-count">0</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-label">OS style</div>
+                    <div id="dashboard-os-mode">Windows 11</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-label">Theme</div>
+                    <div id="dashboard-theme">Dark</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-label">Current time</div>
+                    <div id="dashboard-time">00:00:00</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-label">Desktop background</div>
+                    <div id="dashboard-bg-mode">Default</div>
+                </div>
+                <div class="dashboard-actions">
+                    <div class="dashboard-action-group">
+                        <div class="dashboard-subtitle">Switch OS</div>
+                        <button onclick="setOSMode('windows11')">Windows 11</button>
+                        <button onclick="setOSMode('macos')">MacOS</button>
+                        <button onclick="setOSMode('linux')">Linux</button>
+                    </div>
+                    <div class="dashboard-action-group">
+                        <div class="dashboard-subtitle">Change background</div>
+                        <div class="dashboard-bg-buttons">
+                            <button onclick="setOSBackground('default')">Default</button>
+                            <button onclick="setOSBackground('blue')">Blue</button>
+                            <button onclick="setOSBackground('sunset')">Sunset</button>
+                            <button onclick="setOSBackground('space')">Space</button>
+                        </div>
+                    </div>
+                    <button onclick="toggleTheme()">Toggle Light/Dark</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="music" style="top:320px; left:466px; max-width: 520px;">
+            <div class="app-header">
+                <span>🎧 Music Studio</span>
+                <button onclick="closeApp('music')">✕</button>
+            </div>
+            <div class="app-body music-body">
+                <div id="music-track">Now playing: Cyber Waves</div>
+                <div id="music-status">Ready to play a synth tone.</div>
+                <div class="app-footer">
+                    <button onclick="nextTrack()">Next Track</button>
+                    <button onclick="playTrack()">Play Tone</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-interface" id="paint" style="top:100px; left:78px; max-width: 520px;">
+            <div class="app-header">
+                <span>🖌️ Paint</span>
+                <button onclick="closeApp('paint')">✕</button>
+            </div>
+            <div class="app-body paint-body">
+                <div class="paint-toolbar">
+                    <button onclick="setPaintColor('#5ef1ff')">Cyan</button>
+                    <button onclick="setPaintColor('#ff81c0')">Pink</button>
+                    <button onclick="setPaintColor('#a060ff')">Purple</button>
+                    <button onclick="clearPaint()">Clear</button>
+                </div> 
+                <canvas id="paint-canvas" width="460" height="260"></canvas>
+            </div>
+        </div>
+
+        <div class="app-interface" id="camera" style="top:140px; left:78px; max-width: 520px;">
+            <div class="app-header">
+                <span>📷 Camera</span>
+                <button onclick="closeApp('camera')">✕</button>
+            </div>
+            <div class="app-body camera-body">
+                <video id="camera-preview" autoplay muted playsinline></video>
+                <div id="camera-status">Ready. Click Start to activate the camera.</div>
+                <div class="app-footer">
+                    <button onclick="startCamera()">Start Camera</button>
+                    <button onclick="takePhoto()">Capture</button>
+                </div>
+                <img id="camera-photo" alt="Captured photo" />
+            </div>
+        </div>
+
+        <div class="app-interface" id="search-engine" style="top:140px; left:466px; max-width: 520px;">
+            <div class="app-header">
+                <span>🔍 Search Engine</span>
+                <button onclick="closeApp('search-engine')">✕</button>
+            </div>
+            <div class="app-body search-body">
+                <div class="search-input-row">
+                    <input id="search-query" type="text" placeholder="Search your apps or the web..." autocomplete="off" />
+                    <button onclick="runSearch()">Search</button>
+                </div>
+                <div id="search-results" class="search-results">
+                    <div class="search-placeholder">Type a query and press Search.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskbar" class="taskbar">
+        <div class="taskbar-start">
+            <button class="start-button" onclick="openApp('dashboard')">🪟</button>
+            <span id="taskbar-title">Windows 11</span>
+            <button data-app="terminal" onclick="openApp('terminal')">Terminal</button>
+            <button data-app="file-explorer" onclick="openApp('file-explorer')">Explorer</button>
+            <button data-app="journal" onclick="openApp('journal')">Journal</button>
+            <button data-app="browser" onclick="openApp('browser')">Browser</button>
+            <button data-app="calculator" onclick="openApp('calculator')">Calculator</button>
+            <button data-app="music" onclick="openApp('music')">Music</button>
+            <button data-app="paint" onclick="openApp('paint')">Paint</button>
+            <button onclick="toggleTheme()">Theme</button>
+        </div>
+        <div id="taskbar-clock">
+            <span id="taskbar-time">00:00:00</span>
+            <span id="taskbar-date">Loading…</span>
+        </div>
+    </div>
+
+    <script src="filesystem.js"></script>
+    <script src="clock/clock.js"></script>
+    <script src="notepad/notepad.js"></script>
+    <script src="notepad/enhanced-notepad.js"></script>
+    <script src="terminal/terminal.js"></script>
+    <script src="terminal/advanced-terminal.js"></script>
+    <script src="music/music.js"></script>
+    <script src="paint/paint.js"></script>
+    <script src="paint/enhanced-paint.js"></script>
+    <script src="file-explorer/file-explorer.js"></script>
+    <script src="file-explorer/enhanced-file-explorer.js"></script>
+    <script src="browser/browser.js"></script>
+    <script src="browser/enhanced-browser.js"></script>
+    <script src="search-engine/search-engine.js"></script>
+    <script src="dashboard/dashboard.js"></script>
+    <script src="weather/weather.js"></script>
+    <script src="weather/enhanced-weather.js"></script>
+    <script src="palette/palette.js"></script>
+    <script src="eco-tips/eco-tips.js"></script>
+    <script src="calculator/calculator.js"></script>
+    <script src="calculator/enhanced-calculator.js"></script>
+    <script src="camera/camera.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

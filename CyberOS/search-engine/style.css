@@ -1,0 +1,31 @@
+/* Search Engine app CSS */
+.search-input-row {
+  display: flex;
+  gap: 10px;
+}
+.search-input-row input {
+  flex: 1 1 auto;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+}
+.search-results {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+.search-result {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.search-result-title {
+  font-weight: 700;
+}
+.search-result-snippet {
+  margin: 8px 0 0;
+  color: rgba(255,255,255,0.78);
+}

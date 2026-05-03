@@ -1,0 +1,33 @@
+/* Dashboard app CSS */
+.dashboard-body {
+  display: grid;
+  gap: 12px;
+}
+.dashboard-card {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.dashboard-label {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+.dashboard-actions {
+  display: grid;
+  gap: 12px;
+}
+.dashboard-action-group {
+  display: grid;
+  gap: 8px;
+}
+.dashboard-bg-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.dashboard-action-group button,
+.dashboard-actions > button {
+  width: 100%;
+}

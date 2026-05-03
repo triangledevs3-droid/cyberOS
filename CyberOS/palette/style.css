@@ -1,0 +1,20 @@
+/* Palette app CSS */
+#palette-hex {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+.palette-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.palette-chip {
+  flex: 1 1 100px;
+  min-width: 90px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  color: #04122f;
+  font-weight: 700;
+  text-align: center;
+}

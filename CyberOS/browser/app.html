@@ -1,0 +1,20 @@
+<!-- Browser app HTML -->
+<div class="app-interface" id="browser" style="top:140px; left:78px; max-width: 840px; width: 88vw; min-width: 480px;">
+    <div class="app-header">
+        <span>🌐 Browser</span>
+        <button onclick="closeApp('browser')">✕</button>
+    </div>
+    <div class="app-body browser-body">
+        <div class="browser-toolbar">
+            <input id="browser-url" type="text" placeholder="Enter website or search term" autocomplete="off" />
+            <button onclick="navigateBrowser()">Go</button>
+        </div>
+        <div class="browser-window">
+            <iframe id="browser-frame" srcdoc="<html><body style='margin:0;padding:32px;font-family:Segoe UI, sans-serif;background:#071029;color:#edf5ff;'><h1>Welcome to Win11 Browser</h1><p>Type a website or any search term above and press Go.</p><p>For a quick demo, try: <strong>example.com</strong> or <strong>windows 11</strong>.</p></body></html>" title="Browser window"></iframe>
+        </div>
+        <div class="app-footer browser-footer">
+            <button onclick="navigateBrowserHome()">Home</button>
+            <button onclick="refreshBrowser()">Refresh</button>
+        </div>
+    </div>
+</div>

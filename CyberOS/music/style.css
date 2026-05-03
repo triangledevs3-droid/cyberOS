@@ -1,0 +1,16 @@
+/* Music app CSS */
+.app-interface#music .music-body {
+  display: grid;
+  gap: 14px;
+}
+#music-track {
+  font-size: 1rem;
+  font-weight: 700;
+}
+#music-status {
+  color: rgba(255, 255, 255, 0.78);
+}
+.app-interface#music .app-footer {
+  display: flex;
+  gap: 10px;
+}

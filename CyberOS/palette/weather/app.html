@@ -1,0 +1,14 @@
+<!-- Weather app HTML -->
+<div class="app-interface" id="weather" style="top:90px; left:78px;">
+    <div class="app-header">
+        <span>🌦️ Weather Studio</span>
+        <button onclick="closeApp('weather')">✕</button>
+    </div>
+    <div class="app-body weather-body">
+        <div class="weather-value" id="weather-text">Sunny skies and gentle breeze. Refresh to see a new forecast.</div>
+        <div class="app-footer">
+            <button onclick="updateWeather()">Refresh Forecast</button>
+            <button onclick="copyWeather()">Copy Forecast</button>
+        </div>
+    </div>
+</div>

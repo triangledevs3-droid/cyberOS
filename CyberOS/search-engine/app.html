@@ -1,0 +1,16 @@
+<!-- Search Engine app HTML -->
+<div class="app-interface" id="search-engine" style="top:140px; left:466px; max-width: 520px;">
+    <div class="app-header">
+        <span>🔍 Search Engine</span>
+        <button onclick="closeApp('search-engine')">✕</button>
+    </div>
+    <div class="app-body search-body">
+        <div class="search-input-row">
+            <input id="search-query" type="text" placeholder="Search your apps or the web..." autocomplete="off" />
+            <button onclick="runSearch()">Search</button>
+        </div>
+        <div id="search-results" class="search-results">
+            <div class="search-placeholder">Type a query and press Search.</div>
+        </div>
+    </div>
+</div>

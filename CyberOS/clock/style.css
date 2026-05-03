@@ -1,0 +1,15 @@
+/* Clock app CSS */
+.app-interface#clock .clock-body {
+  display: grid;
+  gap: 10px;
+  text-align: center;
+}
+#clock-time {
+  font-size: 2rem;
+  font-weight: 700;
+}
+#clock-date,
+#clock-theme {
+  font-size: 0.95rem;
+  opacity: 0.88;
+}

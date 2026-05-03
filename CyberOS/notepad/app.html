@@ -1,0 +1,14 @@
+<!-- Journal / Notepad app HTML -->
+<div class="app-interface" id="journal" style="top:300px; left:78px;">
+    <div class="app-header">
+        <span>Journal</span>
+        <button onclick="closeApp('journal')">✕</button>
+    </div>
+    <div class="app-body">
+        <textarea id="notepad-text" placeholder="Write your thoughts here..."></textarea>
+        <div class="app-footer" style="display:flex; gap:12px; margin-top:14px;">
+            <button onclick="saveNote()">Save Note</button>
+            <button onclick="loadNote()">Load Note</button>
+        </div>
+    </div>
+</div>

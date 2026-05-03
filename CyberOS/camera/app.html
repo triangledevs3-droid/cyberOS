@@ -1,0 +1,16 @@
+<!-- Camera app HTML -->
+<div class="app-interface" id="camera" style="top:140px; left:78px; max-width: 520px;">
+    <div class="app-header">
+        <span>📷 Camera</span>
+        <button onclick="closeApp('camera')">✕</button>
+    </div>
+    <div class="app-body camera-body">
+        <video id="camera-preview" autoplay muted playsinline></video>
+        <div id="camera-status">Ready. Click Start to activate the camera.</div>
+        <div class="app-footer">
+            <button onclick="startCamera()">Start Camera</button>
+            <button onclick="takePhoto()">Capture</button>
+        </div>
+        <img id="camera-photo" alt="Captured photo" />
+    </div>
+</div>

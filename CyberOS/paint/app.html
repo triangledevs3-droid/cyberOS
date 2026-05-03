@@ -1,0 +1,16 @@
+<!-- Paint app HTML -->
+<div class="app-interface" id="paint" style="top:100px; left:78px; max-width: 520px;">
+    <div class="app-header">
+        <span>🖌️ Paint</span>
+        <button onclick="closeApp('paint')">✕</button>
+    </div>
+    <div class="app-body paint-body">
+        <div class="paint-toolbar">
+            <button onclick="setPaintColor('#5ef1ff')">Cyan</button>
+            <button onclick="setPaintColor('#ff81c0')">Pink</button>
+            <button onclick="setPaintColor('#a060ff')">Purple</button>
+            <button onclick="clearPaint()">Clear</button>
+        </div>
+        <canvas id="paint-canvas" width="460" height="260"></canvas>
+    </div>
+</div>

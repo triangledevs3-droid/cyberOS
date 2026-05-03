@@ -1,0 +1,15 @@
+<!-- Palette app HTML -->
+<div class="app-interface" id="palette" style="top:330px; left:78px;">
+    <div class="app-header">
+        <span>🎨 Color Palette</span>
+        <button onclick="closeApp('palette')">✕</button>
+    </div>
+    <div class="app-body palette-body">
+        <div id="palette-hex">#F3A4FF, #69D6FF, #6CFF94</div>
+        <div class="palette-row" id="palette-swatches"></div>
+        <div class="app-footer">
+            <button onclick="refreshPalette()">New Palette</button>
+            <button onclick="copyPalette()">Copy Colors</button>
+        </div>
+    </div>
+</div>

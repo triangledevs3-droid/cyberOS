@@ -1,0 +1,15 @@
+<!-- Terminal app HTML -->
+<div class="app-interface" id="terminal" style="top:72px; left:78px;">
+    <div class="app-header">
+        <span>Terminal</span>
+        <button onclick="closeApp('terminal')">✕</button>
+    </div>
+    <div class="app-body">
+        <div id="terminal-output">C:\Users\Win11&gt; _</div>
+        <div class="terminal-input-row">
+            <span>C:\&gt;</span>
+            <input id="terminal-input" type="text" placeholder="Type a command and press Enter" autocomplete="off" />
+            <button onclick="runCommand()">Run</button>
+        </div>
+    </div>
+</div>
